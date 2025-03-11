@@ -6,13 +6,13 @@ from pydantic import BaseModel, Field
 model = ChatOpenAI(model="gpt-4o", temperature=0)
 
 
-# 配合pydantic使用，定义期望的Json输出结构
+# 配合pydantic使用，定义期望的YAML输出结构
 class Joke(BaseModel):
     """
-    {
-      "setup": "...",
-      "punchline": "..."
-    }
+    ```
+    setup: ...
+    punchline: ...
+    ```
     """
     setup: str = Field(description="设置笑话的问题")
     punchline: str = Field(description="解决笑话的答案")
